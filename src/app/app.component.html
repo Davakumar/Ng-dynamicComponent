@@ -1,0 +1,13 @@
+<!-- <stepper-component>
+ </stepper-component> -->
+<!-- <dynamic-component></dynamic-component> -->
+<mat-horizontal-stepper class="sticky-stepper" [linear]="isLinear" #stepper color="warn" id="harvstickystepper">
+  <span *ngFor="let step of wizardData">
+    <mat-step [completed]="step.completed" [routerLink]="step.URL" [optional]="step.optional" [aria-label]="step.ariaLabel"
+      [label]="step.label" [id]="step.label">
+
+      <ng-container *ngComponentOutlet="step.component"></ng-container>
+
+    </mat-step>
+  </span>
+</mat-horizontal-stepper>
